@@ -1,0 +1,188 @@
+/**
+ * styles for clutter for pico theme
+ * https://github.com/alan-luo/clutter
+ * ====================================
+ **/
+body {
+  background: #fafafa;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+
+/**
+ * sidebar left
+ * ====================================
+ **/
+.directory a:hover {
+  text-decoration: underline;
+}
+
+.directory a:last-child {
+  font-weight: 700;
+}
+
+.main-nav {
+  top: 0;
+  left: 0;
+  padding: 1em;
+  position: fixed;
+}
+
+.directory {
+  margin-left: 1em;
+}
+
+.main-nav ul {
+  line-height: 1.5em;
+  list-style: none;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+.active a {
+  font-weight: 700;
+}
+
+
+/**
+ * sidebar right
+ * ====================================
+ **/
+.nav-contents {
+  top: 0;
+  right: 1em;
+  padding: 1em;
+  position: fixed;
+}
+
+.nav-contents:hover {
+  opacity: 1;
+}
+
+.nav-contents ul {
+  list-style: none;
+  margin: 0 1em;
+  padding: 0;
+}
+
+.nav-contents ul li:first-child {
+  border-bottom: 1px solid #1a1a1a;
+  margin-bottom: .4em;
+  padding-bottom: .2em;
+}
+
+.nav-contents a:hover {
+  text-decoration: underline;
+}
+
+.layer2 {
+  margin-left: 1em;
+}
+
+
+/**
+ * content
+ * ====================================
+ **/
+.main-content {
+  border-left: 1px solid #e3e3e3;
+  border-right: 1px solid #e3e3e3;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.article {
+  margin: 2em 3em;
+}
+
+.article h1,
+.article h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.article h1 {
+  font-size: 30px;
+}
+
+.article h2 {
+  font-size: 20px;
+}
+
+.article p {
+  font-size: 14px;
+  line-break: strict;
+  line-height: 1.5em;
+  margin: 0 0 .5em;
+  padding: 0;
+  white-space: pre-wrap;
+}
+
+.article a {
+  color: #499bc9;
+  font-weight: 400;
+}
+
+.article a:hover {
+  text-decoration: underline;
+}
+
+.article ul,
+.article ol {
+  margin: 0 0 1em;
+}
+
+.article p.publish-meta {
+  color: #999;
+  font-size: 12px;
+  font-style: oblique;
+  margin: 0 0 1em;
+}
+
+.article p.publish-meta span {
+  color: #333;
+}
+
+.section-anchor {
+  font-weight: 400;
+  left: -0.8em;
+  position: absolute;
+}
+
+.section-anchor a {
+  color: #999;
+}
+
+.section-anchor a:hover {
+  color: #333;
+}
+
+
+pre {
+  border: 1px solid #aaa;
+  overflow: hidden;
+}
+
+pre code {
+  overflow-x: scroll;
+}
+
+p code,
+li code {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  color: #444;
+  padding: .1em .2em;
+}
