@@ -1,7 +1,12 @@
 ---
 title: Code
 description: A place to test code snippets
-shortcut: 'command+h,ctrl+h'
+author: Ryan R. Smith
+date: 2019-02-27 @ 17:48
+time: 17:48
+robots: noindex,nofollow
+#template: index
+#shortcut: 'command+h,ctrl+h'
 ---
 
 This is a single line of text with some **bold text too**. But this text is a snippet of code.

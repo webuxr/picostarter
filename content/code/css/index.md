@@ -1,6 +1,11 @@
 ---
 title: CSS
 description: A place to test CSS code snippets
+author: Ryan R. Smith
+date: 2019-02-27 @ 17:48
+time: 17:48
+robots: noindex,nofollow
+#template: index
 #shortcut: 'command+h,ctrl+h'
 ---
 
