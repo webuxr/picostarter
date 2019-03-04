@@ -1,14 +1,15 @@
 ---
 title: PHP
-description: A place to test PHP code snippets
+description: A place to test PHP code snippets.
 author: Ryan R. Smith
-date: 2019-02-27 @ 17:48
-time: 17:48
+date: 2019-02-27 @ 17:59:00
+time: 17:59:00
 robots: noindex,nofollow
-#template: index
+template: index
 #shortcut: 'command+p,ctrl+p'
 ---
 
+## %meta.title%
 This is a single line of text with some **bold text too**. But the following text is a snippet of PHP code:
 
 ```

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" dir="ltr">
+<head>
+  {% include "{{ theme_url }}/inc/head.twig" %}
+</head>
+<body>
+  <div class="grid-container">
+    {% include "{{ theme_url }}/inc/header.twig" %}
+    {% include "{{ theme_url }}/inc/nav.twig" %}
+    {% include "{{ theme_url }}/inc/body.twig" %}
+    {% include "{{ theme_url }}/inc/aside.twig" %}
+    {% include "{{ theme_url }}/inc/bottom.twig" %}
+    {% include "{{ theme_url }}/inc/footer.twig" %}
+  </div>
+  <p><a href="http://picocms.org/" title="PicoCMS">PicoCMS</a> <a href="https://github.com/picocms/Pico/releases/tag/v{{ version }}" title="v{{ version }}">v{{ version }}</a></p>
+  {% include "{{ theme_url }}/inc/scripts.twig" %}
+</body>
+</html>

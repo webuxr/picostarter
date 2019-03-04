@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ css_file }}" type="text/css">
   {% endfor %}
 </head>
+
 <body>
   <aside class="main-nav">
     <nav>
@@ -33,11 +34,18 @@
         {% endfor %}
       </ul>
     </nav>
+    {% if config.twig_config.debug %}
+    <p><a href="http://picocms.org/" title="PicoCMS">PicoCMS</a> <a href="https://github.com/picocms/Pico/releases/tag/v{{ version }}" title="v{{ version }}">v{{ version }}</a></p>
+    {% endif %}
   </aside>
 
   <main class="main-content">
     <article class="article">
       {{ content }}
+      {% if meta.date %}
+      <hr>
+      <small>{{ meta.date_formatted }}</small>
+      {% endif %}
     </article>
   </main>
 
@@ -45,6 +53,24 @@
     <ul id="page-toc-container">
 
     </ul>
+    
+    <!--<ul>
+    {% for sectionKey, linksn in meta.links %}
+      <li>
+        {% if links.url %}
+          <a href="#{{ sectionKey }}">{{ section._title }}</a>
+          <ul>
+            {% for subSectionKey, subSection in section if subSectionKey != "_title" %}
+              <li><a href="#{{ subSectionKey }}">{{ subSection }}</a></li>
+            {% endfor %}
+          </ul>
+          {% else %}
+            <a href="#{{ sectionKey }}">{{ section }}</a>
+          {% endif %}
+        </li>
+    {% endfor %}
+    </ul>-->
+    
   </nav>
 
   <script src="{{ theme_url }}/scripts/highlight.min.js"></script>

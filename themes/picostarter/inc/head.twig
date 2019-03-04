@@ -1,0 +1,20 @@
+<!-- START: head.twig -->
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="author" content="Ryan R. Smith, https://www.webuxr.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+
+<title>{{ site_title }}{% if meta.title %} | {{ meta.title }}{% endif %}</title>
+
+{% if meta.description %}
+  <meta name="description" content="{{ meta.description|striptags }}">
+{% endif %}
+
+<link rel="stylesheet" href="{{ theme_url }}/css/foundation.min.css">
+<link rel="stylesheet" href="{{ theme_url }}/css/app.css">
+<link rel="stylesheet" href="{{ theme_url }}/css/main.css">
+{% for css_file in config.external_css %}
+  <link rel="stylesheet" href="{{ css_file }}">
+{% endfor %}
+<!-- END: head.twig -->

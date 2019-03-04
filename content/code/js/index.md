@@ -2,13 +2,14 @@
 title: JavaScript
 description: A place to test JavaScript code snippets
 author: Ryan R. Smith
-date: 2019-02-27 @ 17:48
-time: 17:48
+date: 2019-02-27 @ 16:55:00
+time: 16:55:00
 robots: noindex,nofollow
-#template: index
+template: index
 #shortcut: 'command+j,ctrl+j'
 ---
 
+## %meta.title%
 This is a single line of text with some **bold text too**. But the following text is a snippet of JavaScript code.
 
 ```js

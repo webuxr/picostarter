@@ -42,7 +42,8 @@ content_config:
 ##
 # Plugins
 #
-DummyPlugin.enabled: false          # Force the plugin "DummyPlugin" to be disabled
+DummyPlugin.enabled: false          # Force the plugin "DummyPlugin" to be disabled.
+PicoDeprecated.enabled: false       # Force the plugin "PicoDeprecated" to be disabled.
 
 ##
 # Custom

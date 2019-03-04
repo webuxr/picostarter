@@ -1,33 +1,34 @@
 ---
 title: SCSS
-description: A place to test SCSS code snippets
+description: A place to test SCSS code snippets.
 author: Ryan R. Smith
-date: 2019-02-27 @ 17:48
-time: 17:48
+date: 2019-02-27 @ 15:49:00
+time: 15:49:00
 robots: noindex,nofollow
-#template: index
+template: index
 #shortcut: 'command+m,ctrl+m'
 ---
 
+## %meta.title%
 This is a single line of text with some **bold text too**. But the following text is a snippet of SCSS code.
 
 <style>
-.main { color:blue; }
-.main .look-out { color:red; font-weight:700; }
+.example { color:blue; }
+.example .look-out { color:red; font-weight:700; }
 </style>
-<p class="main">
+<p class="example">
   This is normal text... but <span class="look-out">LOOK OUT</span>! There's <span class="look-out">warning text</span> all over this place.
 </p>
 
 ```html
-<p class="main">
+<p class="example">
   This is normal text... but <span class="look-out">LOOK OUT</span>! There's <span class="look-out">warning text</span> all over this place.
 </p>
 ```
 
-The following SCSS:
+**The following SCSS:**
 ```css
-.main {
+.example {
   color: blue;
 
   & .look-out {
@@ -37,12 +38,12 @@ The following SCSS:
 }
 ```
 
-...will render as:
+**...once compiled, will render as:**
 ```css
-.main {
+.example {
   color: blue;
 }
-.main .look-out {
+.example .look-out {
   color: red;
   font-weight: 700;
 }
