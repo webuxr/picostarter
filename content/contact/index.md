@@ -1,10 +1,17 @@
 ---
 title: Contact
 description: Have a question? Reach out and see if I have the answer.
-#shortcut: 'ctrl+c'
+author: Ryan R. Smith
+date: 2019-02-27 17:48:00
+time: 17:48:00
+robots: noindex,nofollow
+template: index
+#gzip: true
 ---
 
-**Contact Me**
-Have a question? Reach out and see if I have the answer.
+## %meta.title%
+
+**Have a question?**
+Reach out and see if I have the answer.
 
 `<insert form here>`

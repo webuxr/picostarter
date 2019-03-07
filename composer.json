@@ -25,5 +25,10 @@
         "picocms/pico-theme": "^2.0",
         "picocms/pico-deprecated": "^2.0",
         "picocms/composer-installer": "^1.0"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Pico\\Composer\\Installer\\PluginInstaller::postAutoloadDump"
+        ]
     }
 }

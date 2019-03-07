@@ -7,138 +7,46 @@
  */
 
 
-
-/*
- * Variables, resets and setup
- */
-
-:root {
-  --color-asphalt:#4d5757;
-  --color-cloud: #fafafa;
-  --color-concrete: #c1cacc;
-  --color-grass: #27ae60;
-  --color-ocean: #2980B9;
-  --color-smoke: #e1e7e8;
-  --color-white: #ffffff;
-
-  --accent-color: var(--color-concrete);
-  --border-color: var(--color-smoke);
-  --code-bg-color: var(--color-cloud);
-  --link-color: var(--color-ocean);
-  --text-color: var(--color-asphalt);
-
-  --document-horizontal-margin: 80px;
-  --main-content-margin: 0 auto;
-  --main-content-max-width: 800px;
-  --nav-width: 180px;
-  --vertical-padding: 40px;
-}
-
-
-
-/*
- * Font-face
- */
-
-@font-face {
-  font-weight: 400;
-  font-style: normal;
-  font-family: 'source-sans-pro';
-  src: url('../font/SourceSansPro-Regular.eot'); /* IE9 Compat Modes */
-  src: url('../font/SourceSansPro-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('../font/SourceSansPro-Regular.otf.woff') format('woff'), /* Pretty Modern Browsers */
-  url('../font/SourceSansPro-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
-}
-
-@font-face {
-  font-weight: 400;
-  font-style: italic;
-  font-family: 'source-sans-pro';
-  src: url('../font/SourceSansPro-It.eot'); /* IE9 Compat Modes */
-  src: url('../font/SourceSansPro-It.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('../font/SourceSansPro-It.otf.woff') format('woff'), /* Pretty Modern Browsers */
-  url('../font/SourceSansPro-It.ttf') format('truetype'); /* Safari, Android, iOS */
-}
-
-@font-face {
-  font-weight: 700;
-  font-style: normal;
-  font-family: 'source-sans-pro';
-  src: url('../font/SourceSansPro-Semibold.eot'); /* IE9 Compat Modes */
-  src: url('../font/SourceSansPro-Semibold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('../font/SourceSansPro-Semibold.otf.woff') format('woff'), /* Pretty Modern Browsers */
-  url('../font/SourceSansPro-Semibold.ttf') format('truetype'); /* Safari, Android, iOS */
-}
-
-@font-face {
-  font-weight: 700;
-  font-style: italic;
-  font-family: 'source-sans-pro';
-  src: url('../font/SourceSansPro-SemiboldIt.eot');
-  /* IE9 Compat Modes */
-  src: url('../font/SourceSansPro-SemiboldIt.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('../font/SourceSansPro-SemiboldIt.otf.woff') format('woff'), /* Pretty Modern Browsers */
-  url('../font/SourceSansPro-SemiboldIt.ttf') format('truetype'); /* Safari, Android, iOS */
-}
-
-
-
-/*
- * Mediaqueries
- */
-
-@media (max-width: 1200px) {
-  :root {
-    --main-content-margin: 0 0 0 var(--nav-width);
-  }
-}
-
-
-
 /*
  * Block styling
  */
-
 html {
-  font-family: "source-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.4;
+  font: normal normal 16px/1.4 'Source Sans Pro', sans-serif;
 }
 
 body {
   background-color: #fff;
-  color: var(--text-color);
+  color: #4d5757;
   margin: 0;
 }
-
 
 
 /*
  * Structure
  */
-
 .main-content {
-  margin: var(--main-content-margin);
-  max-width: var(--main-content-max-width);
+  margin: 0 0 0 180px;
+  max-width: 800px;
+}
+
+@media (min-width: 1200px) {
+  .main-content {
+    margin: 0 auto;
+  }
 }
 
 .main-content .article {
-  margin-bottom: var(--document-horizontal-margin);
-  margin-left: var(--vertical-padding);
-  margin-right: var(--vertical-padding);
-  margin-top: var(--document-horizontal-margin);
+  margin: 80px 40px;
 }
-
 
 
 /*
  * Basic styling
  */
-
 a,
 a:link,
 a:visited {
-  color: var(--link-color);
+  color: #2980b9;
   text-decoration: none;
 }
 
@@ -163,13 +71,13 @@ h1 {
   font-size: 2.5rem;
   font-weight: normal;
   letter-spacing: -0.025rem;
-  margin-bottom: 1.5rem;
   margin-top: 6rem;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
   background-color: #fff;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid #e1e7e8;
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
@@ -178,14 +86,14 @@ h2 {
   padding-top: 1.5rem;
   position: -webkit-sticky;
   position: sticky;
-  top:0;
+  top: 0;
 }
 
 h3 {
   font-size: 1.25rem;
   font-weight: bold;
-  margin-bottom: 1rem;
   margin-top: 3rem;
+  margin-bottom: 1rem;
 }
 
 h4,
@@ -196,11 +104,10 @@ h6 {
 }
 
 h2::before,
-h3::before
-{
+h3::before {
   -webkit-font-smoothing: antialiased;
-  background-color: var(--color-white);
-  color: var(--accent-color);
+  background-color: #fff;
+  color: #c1cacc;
   content: '#';
   display: inline-block;
   font-size: 1.25rem;
@@ -215,11 +122,9 @@ h3::before
   margin-top: 0;
 }
 
-
 h2 + h3 {
   margin-top: 1.5rem;
 }
-
 
 table {
   border-collapse: collapse;
@@ -229,7 +134,7 @@ table {
 
 table td,
 table th {
-  border-color: var(--border-color);
+  border-color: #e1e7e8;
   border-style: solid;
   border-width: 1px 0;
   padding: .3rem 0;
@@ -243,10 +148,10 @@ h2 + table tr:first-child td {
 }
 
 code {
-  background-color: var(--code-bg-color);
+  background-color: #fafafa;
   border-radius: 1px;
-  border: 1px solid var(--border-color);
-  color: var(--text-color);
+  border: 1px solid #e1e7e8;
+  color: #4d5757;
   display: inline-block;
   font-size: .875rem;
   padding: 0 3px;
@@ -258,30 +163,28 @@ pre code {
 }
 
 
-
 /*
  * Copy to clipboard
  */
-
 .copy-to-clipboard-btn {
   appearance: none;
   border: 0;
   background: none;
   margin: 0;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--accent-color);
+  color: #0079c2; /*qsc-blue*/
 }
 
 .copy-to-clipboard-btn:hover {
-  color: var(--link-color);
+  color: #2980b9;
 }
 
 .copy-to-clipboard-btn:active {
-  color: var(--text-color);
+  color: #4d5757;
 }
 
 .copy-to-clipboard-btn svg {
@@ -299,7 +202,7 @@ pre code {
   top: 0;
   right: 0;
   transform: translateX(100%);
-  opacity: .25;
+  opacity: .5;
   transition: opacity .15s;
 }
 
@@ -308,21 +211,19 @@ pre code {
 }
 
 
-
 /*
  * Main navigation
  */
-
 .main-nav {
   box-sizing: border-box;
   height: 100vh;
   left: 0;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding-left: var(--vertical-padding);
+  padding-left: 40px;
   position: fixed;
   top: 0;
-  width: var(--nav-width);
+  width: 180px;
 }
 
 .main-nav::-webkit-scrollbar {
@@ -330,9 +231,9 @@ pre code {
 }
 
 .main-nav a {
-  color: var(--text-color);
+  color: #4d5757;
   display: flex;
-  font-size: 0.9rem;
+  font-size: .9rem;
   overflow: hidden;
   padding-bottom: 0;
   padding-top: 5px;
@@ -344,18 +245,18 @@ pre code {
   text-decoration: none;
 }
 
-.main-nav a .shortcut {
+/* .main-nav a .shortcut {
   align-self: center;
-  color: var(--color-concrete);
+  color: #c1cacc;
   display: inline-block;
   font-size: .6875rem;
   font-weight: normal;
   margin-left: auto;
   text-align: right;
-}
+} */
 
 .main-nav nav {
-  padding:  var(--document-horizontal-margin) 0;
+  padding:  80px 0;
 }
 
 .main-nav nav ul {
@@ -365,15 +266,15 @@ pre code {
 }
 
 .main-nav nav li {
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 .main-nav nav > ul > li {
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 .main-nav nav li.active {
-
+  color: #00929f;
 }
 
 .main-nav nav li.active > a {
@@ -381,8 +282,7 @@ pre code {
 }
 
 /* Main nav Tree (not implemented...yet */
-
-.main-nav nav li.directory > a::before {
+/* .main-nav nav li.directory > a::before {
   content: '▸ ';
 }
 
@@ -399,57 +299,92 @@ pre code {
 
 .main-nav nav li.directory.open > ul {
   display: block;
+} */
+
+.main-nav .debug {
+  display: block;
+  width: 100%;
+}
+.main-nav .debug a {
+  display: inline-block;
+  font-size: .8rem;
+  font-weight: normal;
+}
+.main-nav .debug a,
+.main-nav .debug a:link,
+.main-nav .debug a:visited {
+  text-decoration: none;
+}
+.main-nav .debug a:hover,
+.main-nav .debug a:active,
+.main-nav .debug a:focus {
+  text-decoration: underline;
+}
+
+.main-nav .debug a.cms,
+.main-nav .debug a.ver {
+  color: #ccc;
+}
+.main-nav .debug a.cms:hover {
+  color: #27ae60;
+}
+.main-nav .debug a.ver:hover {
+  color: #2980b9;
 }
 
 /* same-page navigation (Not implemented...yet) */
-
 .page-nav:not(:empty) {
   padding-top: 5px;
 }
 
 .page-nav a {
-  font-size: 0.8em;
-  padding-bottom: 0px;
-  padding-top: 0px;
+  font-size: .8em;
+  padding-bottom: 0;
+  padding-top: 0;
 }
 
-.page-nav a:before {
-  content: '# ';
+.page-nav a::before {
+  content: '# '; /*'\f13d ';*/
+  /* display: inline-block;
+  font-family: 'Font Awesome 5 Free', sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 900;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased; */
 }
-
 
 
 /*
  * Main navigation
  */
-
-.page-toc {
+nav.page-toc {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding-right: var(--vertical-padding);
+  padding-right: 40px;
   position: fixed;
   right: 0;
   top: 0;
-  width: var(--nav-width);
+  width: 180px;
 }
 
 @media (max-width: 1200px) {
-  .page-toc {
+  nav.page-toc {
     display: none;
   }
 }
 
-.page-toc ul {
+nav.page-toc ul {
   list-style: none;
   margin: 0;
-  padding:  var(--document-horizontal-margin) 0;
+  padding: 80px 0;
 }
 
-.page-toc a {
-  color: var(--color-concrete);
+nav.page-toc a {
+  color: #c1cacc;
   display: flex;
-  font-size: 0.9rem;
+  font-size: .9rem;
   overflow: hidden;
   padding-bottom: 0;
   padding-top: 5px;
@@ -457,17 +392,15 @@ pre code {
   white-space: nowrap;
 }
 
-.page-toc a:hover {
+nav.page-toc a:hover {
   text-decoration: none;
 }
-
 
 
 /* Toc markers are used as anchors since sticky headers
  * interfere with scrollto when scrolling up.
  */
-
-.page-toc-scroll-marker {
+nav.page-toc-scroll-marker {
   display: block;
   height: 1px;
   overflow: hidden;
@@ -477,13 +410,11 @@ pre code {
 }
 
 
-
 /* Class to contain example code for example if
  * used as a styleguide or pattern library
  */
-
 .example {
-  border: 1px solid var(--border-color);
+  border: 1px solid #e1e7e8;
   padding: 1rem;
 }
 

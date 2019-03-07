@@ -1,13 +1,18 @@
 ---
 title: Code
-description: A place to test code snippets
-shortcut: 'command+h,ctrl+h'
+description: A place to test code snippets.
+author: Ryan R. Smith
+date: 2019-02-27 17:48:00
+time: 17:48:00
+robots: noindex,nofollow
+template: index
+#shortcut: 'command+h,ctrl+h'
 ---
 
+## %meta.title%
 This is a single line of text with some **bold text too**. But this text is a snippet of code.
 
-**Code**
-I have notes on the following "Code" topics.
+**I have notes on the following "Code" topics.**
 
 -   [CSS](/code/css "CSS code snippets")
 -   [HTML](/code/html "HTML code snippets")

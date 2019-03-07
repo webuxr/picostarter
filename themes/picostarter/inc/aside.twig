@@ -1,0 +1,18 @@
+<!-- START: aside.twig -->
+<aside class="main-nav">
+  <nav>
+    <ul>
+      {% for page in pages if page.title %}
+        <li class="menuitem {% if page.id == current_page.id %}active{% endif %}">
+          <a href="{{ page.url }}" data-shortcut="{{ page.meta.shortcut }}">
+            {{ page.title }}
+            {% if page.meta.shortcut %}
+              <span class="shortcut">{{ page.meta.shortcut|replace({'+':' '}) }}</a>
+            {% endif %}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</aside>
+<!-- END: aside.twig -->

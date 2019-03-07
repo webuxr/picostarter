@@ -1,0 +1,14 @@
+<main class="main-content">
+  <article class="article">
+
+    <!-- {!% include "{!{ theme_url }}/inc/on-page-toc.twig" %} -->
+
+    {{ content }}
+
+    {% if meta.date %}
+    <hr>
+    <small>{{ meta.date_formatted }}</small>
+    {% endif %}
+
+  </article>
+</main>

@@ -1,0 +1,25 @@
+{
+    "name": "picocms/pico-foundation",
+    "type": "pico-theme",
+    "description": "A Pico theme built from the Zurb Foundation for Sites 'Essential' package.",
+    "keywords": [ "pico", "picocms", "pico-foundation", "pico-foundation-theme", "foundation-theme" ],
+    "homepage": "https://www.webuxr.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryan R. Smith",
+            "homepage": "https://www.webuxr.com"
+        }
+    ],
+    "support": {
+        "docs": "http://picocms.org/themes/default/",
+        "issues": "https://github.com/picocms/pico-theme/issues",
+        "source": "https://github.com/picocms/pico-theme"
+    },
+    "require": {
+        "picocms/pico": "self.version"
+    },
+    "extra": {
+        "installer-name": "pico-foundation"
+    }
+}

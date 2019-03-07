@@ -1,16 +1,21 @@
 ---
 title: PHP
-description: A place to test PHP code snippets
-shortcut: 'command+h,ctrl+h'
+description: A place to test PHP code snippets.
+author: Ryan R. Smith
+date: 2019-02-27 17:59:00
+time: 17:59:00
+robots: noindex,nofollow
+template: index
 ---
 
+## %meta.title%
 This is a single line of text with some **bold text too**. But the following text is a snippet of PHP code:
 
 ```
 if ($namespace === $pathSlug)                 /* If the same, use $namespace AS the $pathSlug for resource paths */
 {
-  $indexPath = $indexUrlPath . $namespace;    /* ex: /sites/pages/blackfriday ...or............. /sites/promos/clearance */
-  $mediaPath = $mediaUrlPath . $namespace;    /* ex: /sites/media/pages/blackfriday ...or....... /sites/media/promos/clearance */
+  $indexPath = $indexUrlPath . $namespace;    /* ex: /sites/pages/bf ...or............. /sites/promos/clearance */
+  $mediaPath = $mediaUrlPath . $namespace;    /* ex: /sites/media/pages/bf ...or....... /sites/media/promos/clearance */
 }
 elseif ($namespace !== $pathSlug)             /* If not same, use $pathSlug for resource paths */
 {
@@ -69,28 +74,25 @@ $date = date_create(); // Now()
 $todayNow = date_timestamp_get($date); // Current timestamp.
 ```
 
-
-
 ## Timezone
 
 If you want the 3-letter timezone abbreviation try this snippet:
 
-Version 1:
+**Example 1:**
 ```
 date_default_timezone_set('Europe/Sofia');
 echo date_default_timezone_get(); // Europe/Sofia
 echo ' => '.date('T'); // => EET
 ```
 
-Version 2:
+**Example 2:**
 ```
 $dateTime = new DateTime();
 $dateTime->setTimeZone(new DateTimeZone('America/Havana'));
 echo $dateTime->format('T');
 ```
 
-Version 3 (more involved?):
-
+**Example 3 (more involved?):**
 ```
 function get_timezone_abbreviation($timezone_id) {
   if($timezone_id){

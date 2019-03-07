@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- {!% include "{!{ theme_url }}/inc/head.twig" %} -->
   <meta charset="utf-8">
   <meta name="author" content="Fredrik Danielsson, http://lostkeys.se">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,43 +12,115 @@
 
   <title>{{ site_title }}{% if meta.title %} | {{ meta.title }}{% endif %}</title>
 
-  <link rel="stylesheet" href="{{ theme_url }}/styles/main.css" type="text/css">
-  <link rel="stylesheet" href="{{ theme_url }}/styles/highlightjs-github.min.css" type="text/css">
+  <link rel="stylesheet" href="{{ theme_url }}/styles/highlightjs-github.min.css">
+  <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css"> -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i">
+  <!-- <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+  <!-- <link rel="stylesheet" href="{!{ theme_url }}/styles/fontawesome-v572-all.css"> -->
+
+  <link rel="stylesheet" href="{{ theme_url }}/styles/main.css">
+  <link rel="stylesheet" href="{{ theme_url }}/styles/nav.css">
   {% for css_file in config.external_css %}
-    <link rel="stylesheet" href="{{ css_file }}" type="text/css">
+    <link rel="stylesheet" href="{{ css_file }}">
   {% endfor %}
+
+  <!-- <style>
+    /*
+      .fas.fa-folder {}
+      .fas.fa-folder-open {}
+      .fas.fa-plus-square {}
+      .fas.fa-minus-square {}
+      .fas.fa-file {}
+      .fas.fa-square {}
+    */
+
+    /*
+    <!- - <ul class="fa-ul">
+      <li><span class="fa-li" ><i class="fas fa-folder fa-xs" aria-hidden="true"></i></span>List item text</li>
+      <li><span class="fa-li" ><i class="fas fa-folder-open fa-xs" aria-hidden="true"></i></span>List item text</li>
+      <li><span class="fa-li" ><i class="fas fa-plus-square fa-xs" aria-hidden="true"></i></span>List item text</li>
+      <li><span class="fa-li" ><i class="fas fa-minus-square fa-xs" aria-hidden="true"></i></span>List item text</li>
+      <li><span class="fa-li" ><i class="fas fa-file fa-xs" aria-hidden="true"></i></span>List item text</li>
+      <li><span class="fa-li" ><i class="fas fa-square fa-xs" aria-hidden="true"></i></span>List item text</li>
+    </ul> - ->
+    */
+  </style> -->
 </head>
+
 <body>
+  <!-- {!% include "{!{ theme_url }}/inc/aside.twig" %} -->
   <aside class="main-nav">
     <nav>
-      <ul>
-        {% for page in pages if page.title %}
-          <li class="menuitem {% if page.id == current_page.id %}active{% endif %}">
-            <a href="{{ page.url }}" data-shortcut="{{ page.meta.shortcut }}">
-              {{ page.title }}
-              {% if page.meta.shortcut %}
-                <span class="shortcut">{{ page.meta.shortcut|replace({'+':' '}) }}</a>
-              {% endif %}
-            </a>
-          </li>
+      <!--
+        root node `/`
+        ├── inner node `code`
+        │   ├── inner node `html`
+        │   │   ├── leaf node `attributes`
+        │   │   ├── leaf node `elements`
+        │   │   └── leaf node `pseudo-elements`
+        │   └── leaf node `css`
+        └── leaf node `contact`
+      -->
+      {% macro tree(parent) %}
+        {% import _self as utils %}
+        {% for child in parent.children %}
+          {% if child.page %}
+            <li class="inner-node">
+              <a href="{{ child.page.url }}" class="leaf-node{% if child.page.id == current_page.id %} active{% endif %}">{{ child.page.title }}</a>
+            </li>
+          {% endif %}
+          {% if child.children %}
+            <li class="inner-node children">
+              <ul class="group">
+                {{ utils.tree(child) }}
+              </ul>
+            </li>
+          {% endif %}
         {% endfor %}
+      {% endmacro %}
+
+      <ul class="menu">
+        <li class="menu-header">
+          <a href="{{ pages["index"].url }}" class="logotype">{{ pages["index"].title }}</a>
+        </li>
+
+        {% import _self as utils %}
+        {{ utils.tree(pages["index"].tree_node) }}
       </ul>
     </nav>
+
+    {% if config.twig_config.debug %}
+    <!-- {! % include "{! { theme_url }}/inc/debug.twig" %} -->
+    <p class="debug"><a class="cms" href="http://picocms.org/" title="PicoCMS">PicoCMS</a> <a class="ver" href="https://github.com/picocms/Pico/releases/tag/v{{ version }}" title="v{{ version }}">v{{ version }}</a></p>
+    {% endif %}
   </aside>
 
+
+  <!-- {!% include "{!{ theme_url }}/inc/content.twig" %} -->
   <main class="main-content">
     <article class="article">
+
+      <!-- {!% include "{!{ theme_url }}/inc/on-page-toc.twig" %} -->
+
       {{ content }}
+
+      {% if meta.date %}
+      <hr>
+      <small>{{ meta.date_formatted }}</small>
+      {% endif %}
+
     </article>
   </main>
 
+  <!-- {!% include "{!{ theme_url }}/inc/toc.twig" %} -->
   <nav class="page-toc">
-    <ul id="page-toc-container">
-
-    </ul>
+    <ul id="page-toc-container"></ul>
   </nav>
 
+  <!-- {!% include "{!{ theme_url }}/inc/scripts.twig" %} -->
   <script src="{{ theme_url }}/scripts/highlight.min.js"></script>
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script> -->
   <script src="{{ theme_url }}/scripts/mousetrap.min.js"></script>
   <script src="{{ theme_url }}/scripts/clipboard.min.js"></script>
   <script>
@@ -73,12 +146,13 @@
         // sticky headers upwards are stacked at the top of the viewport
         // and therefore cannot be jumped to since they are already visible
         // Instead inject a hidden element to use as a scroll marker
-        el.insertAdjacentHTML('beforebegin', '<i id="page-toc-'+index+'" class="page-toc-scroll-marker">TOC marker</i>');
+        el.insertAdjacentHTML('beforebegin', '<i id="page-toc-'+index+'" class="page-toc-scroll-marker fas fa-anchor fa-lg"></i>');
 
         var newTocNavItem = document.createElement('li');
         var newTocNavItemLink = document.createElement('a');
         var newTocNavItemText = document.createTextNode(el.textContent);
 
+        //newTocNavItemLink.classList.add('fas fa-anchor fa-lg');
         newTocNavItemLink.setAttribute('href', '#page-toc-' + index);
         newTocNavItemLink.appendChild(newTocNavItemText);
         newTocNavItem.appendChild(newTocNavItemLink);
@@ -112,12 +186,9 @@
       wrapper.appendChild(el);
 
       // Append a copy to clipboard button after each code block
-      wrapper.insertAdjacentHTML('beforeend', `
-        <button type="button" class="copy-to-clipboard-btn" data-clipboard-target="#code-block-${index}">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0H24V24H0z"/><path fill="currentColor" d="M13 11L11 11 11 14 8 14 8 16 11 16 11 19 13 19 13 16 16 16 16 14 13 14z"/><path fill="currentColor" d="M19 5h-2V3h-1.142c-.447-1.72-2-3-3.858-3S8.589 1.28 8.142 3H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V7c0-1.103-.897-2-2-2zm-7-3c.739 0 1.385.402 1.731 1h-3.463c.347-.598.993-1 1.732-1zM9 5h6v2H9V5zm10 16H5V7h2v2h10V7h2v14z"/></svg>
-        </button>
-      `);
+      wrapper.insertAdjacentHTML('beforeend', `<button type="button" class="copy-to-clipboard-btn" data-clipboard-target="#code-block-${index}"><i class="fas fa-clipboard fa-lg"></i></button>`);
     });
   </script>
+
 </body>
 </html>
