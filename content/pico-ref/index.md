@@ -6,7 +6,6 @@ date: 2019-03-02 20:39:00
 time: 20:39:00
 robots: noindex,nofollow
 template: index
-#gzip: true
 links:
   -
     url: http://picocms.org/cookbook/

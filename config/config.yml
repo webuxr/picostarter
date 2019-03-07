@@ -39,7 +39,6 @@ content_config:
 Clutter.enabled: false              # Enable this plugin when using the Clutter theme.
 pico_edit.enabled: false            # Plugin to allow front-end editing of files stored in /content dir.
 ForceHttpsPlugin.enabled: false     # Plugin to help secure site.
-#zz_pico_debug.enabled: false        # Debug
 
 ##
 # Custom

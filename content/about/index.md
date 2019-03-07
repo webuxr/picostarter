@@ -15,7 +15,6 @@ about:
 #css: assets/override.css # Your own, optional CSS file to override theme styles.
 #fonts: # Your own, optional fonts you'd like to include.
   #- https://fonts.googleapis.com/css
-#gzip: true
 ---
 
 ## %meta.title%

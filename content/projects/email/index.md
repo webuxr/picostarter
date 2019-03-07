@@ -6,7 +6,6 @@ date: 2019-02-27 17:42:00
 time: 17:42:00
 robots: noindex,nofollow
 template: index
-#shortcut: 'command+h,ctrl+h'
 ---
 
 ## %meta.title%
