@@ -1,8 +1,8 @@
 ---
 title: Attributes
-description: A place to test HTML attribute code snippets
+description: A place to test HTML attribute code snippets.
 author: Ryan R. Smith
-date: 2019-02-27 @ 17:48
+date: 2019-02-27 17:48:00
 time: 17:48:00
 robots: noindex,nofollow
 template: index

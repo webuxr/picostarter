@@ -2,11 +2,11 @@
 title: Contact
 description: Have a question? Reach out and see if I have the answer.
 author: Ryan R. Smith
-date: 2019-02-27
+date: 2019-02-27 17:48:00
 time: 17:48:00
-robots: noindex,nofollow
+robots: noindex, nofollow
 template: index
-#shortcut: 'ctrl+c'
+#gzip: true
 ---
 
 ## %meta.title%
@@ -14,4 +14,4 @@ template: index
 **Have a question?**
 Reach out and see if I have the answer.
 
-`<insert form here>`
+`<insert form code here>`

@@ -1,12 +1,12 @@
 ---
-title: Pico Starter
-description: The homepage for this little PicoCMS test site
+title: WebUXr
+description: The homepage for this little PicoCMS test site.
 author: Ryan R. Smith
-date: 2019-02-27 @ 17:48:00
+date: 2019-02-27 17:48:00
 time: 17:48:00
-robots: noindex,nofollow
+robots: noindex, nofollow
 template: index
-#shortcut: 'command+h,ctrl+h'
+#gzip: true
 ---
 
 ## Welcome

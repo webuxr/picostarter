@@ -1,8 +1,8 @@
 ---
 title: Elements
-description: A place to test HTML code snippets (elements)
+description: A place to test HTML code snippets (elements).
 author: Ryan R. Smith
-date: 2019-02-27 @ 17:48
+date: 2019-02-27 17:32:00
 time: 17:32:00
 robots: noindex,nofollow
 template: index

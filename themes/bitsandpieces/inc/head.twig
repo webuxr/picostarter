@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<meta name="author" content="Fredrik Danielsson, http://lostkeys.se">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+{% if meta.description %}
+  <meta name="description" content="{{ meta.description|striptags }}">
+{% endif %}
+
+<title>{{ site_title }}{% if meta.title %} | {{ meta.title }}{% endif %}</title>
+
+<!-- <link rel="stylesheet" href="{!{ theme_dir }}/styles/highlightjs-github.min.css" type="text/css"> -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i">
+<!-- <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<!-- <link rel="stylesheet" href="{!{ theme_dir }}/styles/fontawesome-v572-all.css"> -->
+
+<link rel="stylesheet" href="{{ theme_dir }}/styles/main.css" type="text/css">
+<link rel="stylesheet" href="{{ theme_dir }}/styles/nav.css" type="text/css">
+{% for css_file in config.external_css %}
+  <link rel="stylesheet" href="{{ css_file }}" type="text/css">
+{% endfor %}

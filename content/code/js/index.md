@@ -1,8 +1,8 @@
 ---
 title: JavaScript
-description: A place to test JavaScript code snippets
+description: A place to test JavaScript code snippets.
 author: Ryan R. Smith
-date: 2019-02-27 @ 16:55:00
+date: 2019-02-27 16:55:00
 time: 16:55:00
 robots: noindex,nofollow
 template: index

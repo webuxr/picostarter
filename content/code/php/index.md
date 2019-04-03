@@ -2,11 +2,10 @@
 title: PHP
 description: A place to test PHP code snippets.
 author: Ryan R. Smith
-date: 2019-02-27 @ 17:59:00
+date: 2019-02-27 17:59:00
 time: 17:59:00
 robots: noindex,nofollow
 template: index
-#shortcut: 'command+p,ctrl+p'
 ---
 
 ## %meta.title%

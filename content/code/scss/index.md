@@ -2,7 +2,7 @@
 title: SCSS
 description: A place to test SCSS code snippets.
 author: Ryan R. Smith
-date: 2019-02-27 @ 15:49:00
+date: 2019-02-27 15:49:00
 time: 15:49:00
 robots: noindex,nofollow
 template: index

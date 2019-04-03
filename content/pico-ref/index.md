@@ -2,10 +2,11 @@
 title: Pico Ref
 description: A page chock-full of helpful PicoCMS doc links.
 author: Ryan R. Smith
-date: 2019-03-02
+date: 2019-03-02 20:39:00
 time: 20:39:00
 robots: noindex,nofollow
 template: index
+#gzip: true
 links:
   -
     url: http://picocms.org/cookbook/
@@ -28,5 +29,5 @@ links:
 
 Attempting to iterate through some frontmatter YAML here.
 
--   Link 1: %meta.links.url.1%
--   Link 2: %meta.links.1.url%
+-   Link 1: %meta.links.url%
+-   Link 2: %meta.links.[1].url%

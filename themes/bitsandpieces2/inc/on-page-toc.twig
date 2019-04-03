@@ -1,0 +1,16 @@
+<ul class="on-page-toc">
+  {% for sectionKey, section in meta.toc %}
+    <li>
+      {% if section._title %}
+        <a href="#{{ sectionKey }}">{{ section._title }}</a>
+        <ul>
+          {% for subSectionKey, subSection in section if subSectionKey != "_title" %}
+            <li><a href="#{{ subSectionKey }}">{{ subSection }}</a></li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <a href="#{{ sectionKey }}">{{ section }}</a>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

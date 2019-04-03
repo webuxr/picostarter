@@ -1,8 +1,8 @@
 ##
 # Basic
 #
-site_title: Pico Starter            # The title of your website
-description: The picostarter theme is built with Zurb’s Foundation for Sites UI framework specifically for PicoCMS, provides incredible flexibility to kickstart your next website..
+site_title: WebUXr                  # The title of your website
+description: WebUXr is a site by Ryan R. Smith mafe with PicoCMS.
 base_url: ~                         # Pico will try to guess its base URL, if this fails, override it here. Example: http://example.com/pico/.
 rewrite_url: ~                      # A boolean (true or false) indicating whether URL rewriting is forced.
 timezone: America/Chicago           # Your PHP installation might require you to manually specify a timezone.
@@ -10,7 +10,7 @@ timezone: America/Chicago           # Your PHP installation might require you to
 ##
 # Theme
 #
-theme: bitsandpieces                # picostarter The name of your custom theme
+theme: bitsandpieces2               # clutter bitsandpieces picostarter The name of your custom theme
 theme_url: ~                        # Pico will try to guess the URL to the themes dir of your installation. If this fails, override it here. Example: http://example.com/pico/themes/.
 twig_config:
     cache: false                    # Enable Twig template caching by specifying a path to a writable directory.
@@ -20,7 +20,7 @@ twig_config:
 ##
 # Content
 #
-date_format: '%Y-%m-%d %l:%M %p'             # Pico's default date format. See also: http://php.net/manual/en/function.strftime.php. %F @ %l:%M %p
+date_format: '%Y-%m-%d %l:%M %p'    # Pico's default date format. See also: http://php.net/manual/en/function.strftime.php. %F @ %l:%M %p
 #time_format: '%l:%M %p'            # Future var to hold time only data (not date).
 pages_order_by_meta: author         # Sort pages by meta value "author" (set "pages_order_by" to "meta")
 pages_order_by: alpha               # Change how Pico sorts pages ("alpha" for alphabetical order, "date", or "meta")
@@ -39,6 +39,8 @@ content_config:
 Clutter.enabled: false              # Enable this plugin when using the Clutter theme.
 pico_edit.enabled: false            # Plugin to allow front-end editing of files stored in /content dir.
 ForceHttpsPlugin.enabled: false     # Plugin to help secure site.
+PicoGzip.enabled: false
+zz_pico_debug.enabled: false
 
 ##
 # Custom

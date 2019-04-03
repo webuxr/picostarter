@@ -1,9 +1,9 @@
 ---
 title: HTML
-description: A place to test HTML code snippets (elements, attributes, & more)
+description: A place to test HTML code snippets (elements, attributes, & more).
 author: Ryan R. Smith
-date: 2019-02-27 @ 17:48
-time: 17:48
+date: 2019-02-27 17:22:00
+time: 17:22:00
 robots: noindex,nofollow
 template: index
 #shortcut: 'command+h,ctrl+h'

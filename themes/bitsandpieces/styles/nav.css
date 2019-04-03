@@ -1,0 +1,86 @@
+/**
+ * nav.css for Bits and Pieces theme for Pico
+ * Authored by Ryan R. Smith, @webuxr (https://www.webuxr.com)
+ * Licensed under MIT (https://github.com/lostkeys/Bits-and-Pieces-Theme-for-Pico/blob/master/LICENSE)
+ *
+ * Dev note: This stylesheet is using a mobile first approach
+ */
+
+/*
+  --color-asphalt: #4d5757  (--text-color)
+  --color-cloud: #fafafa    (--code-bg-color)
+  --color-concrete: #c1cacc (--accent-color)
+  --color-grass: #27ae60    (--link-color-active)
+  --color-ocean: #2980b9    (--link-color)
+  --color-smoke: #e1e7e8    (--border-color)
+  --color-white: #fff
+
+  root node `/`
+  ├── inner node `code`
+  │   ├── inner node `html`
+  │   │   ├── leaf node `attributes`
+  │   │   ├── leaf node `elements`
+  │   │   └── leaf node `pseudo-elements`
+  │   └── leaf node `css`
+  └── leaf node `contact`
+*/
+
+
+aside > nav > ul.menu > li.menu-header > a.logotype {
+  /* picostarter */
+  color: #0079c2; /*qsc-blue*/
+  font-size: 1rem;
+  line-height: 2;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+aside > nav > ul.menu > li.inner-node > a.leaf-node {
+  /* about, code, contact, pico ref, process, projects, etc. */
+  color: #4d5757; /*asphalt*/
+}
+aside > nav > ul.menu > li.inner-node > a.leaf-node::before {
+  /* content: '▾ '; */
+}
+
+/* Level 1 */ aside > nav > ul.menu > li.inner-node,
+/* Level 2 */ aside > nav > ul.menu > li.inner-node > ul.group,
+/* Level 3 */ aside > nav > ul.menu > li.inner-node > ul.group > li.inner-node > ul.group,
+/* Level 4 */ aside > nav > ul.menu > li.inner-node > ul.group > li.inner-node > ul.group > li.inner-node > ul.group {
+  border: 1px solid #e1e7e8; /*smoke*/
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+aside > nav > ul.menu > li.inner-node > ul.group,
+aside > nav > ul.menu > li.inner-node > ul.group > li.inner-node > ul.group {
+  margin-left: 10px;
+}
+
+aside > nav > ul.menu > li.inner-node,
+aside > nav > ul.menu > li.inner-node > ul.group > li.inner-node,
+aside > nav > ul.menu > li.inner-node > ul.group > li.inner-node > ul.group {
+  padding-left: 10px;
+}
+
+aside > nav > ul.menu > li.inner-node > ul.group > li.inner-node > a.leaf-node {
+  /* css, html, php, etc. */
+  color: #4d5757; /*asphalt*/
+}
+aside > nav > ul.menu > li.inner-node > ul.group > li.inner-node > a.leaf-node::before {
+  /* content: '▸ '; */
+}
+
+aside > nav > ul.menu > li.inner-node > ul.group > li.inner-node > ul.group > li.inner-node > a.leaf-node {
+  /* attributes, elements, etc. */
+  color: #4d5757; /*asphalt*/
+}
+aside > nav > ul.menu > li.inner-node > ul.group > li.inner-node > ul.group > li.inner-node > a.leaf-node::before {
+  /* content: '▾ '; */
+}
+
+aside > nav > ul.menu > li.inner-node.children,
+aside > nav > ul.menu > li.inner-node > ul.group > li.inner-node.children {
+  padding-left: 1px;
+}
