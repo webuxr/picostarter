@@ -1,12 +1,12 @@
 ---
-Title: Gallery
-Date: 2019-02-18 @ 14:36:00
+title: Gallery
+date: 2019-02-18 14:36:00
 time: 14:36:00
-Icon: picture-o
+icon: picture-o
 template: gallery
 enabled: false
 hidden: true
-Gallery:
+gallery:
   -
     url: https://www.twitter.com
     image: %base.url%/assets/imgs/samples/1.jpg

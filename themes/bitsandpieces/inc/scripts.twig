@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- <script src="{!{ theme_url }}/scripts/highlight.min.js"></script> -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
 <script src="{{ theme_url }}/scripts/mousetrap.min.js"></script>
@@ -68,3 +69,75 @@
     wrapper.insertAdjacentHTML('beforeend', `<button type="button" class="copy-to-clipboard-btn" data-clipboard-target="#code-block-${index}"><i class="fas fa-clipboard fa-lg"></i></button>`);
   });
 </script>
+=======
+<!-- <script src="{!{ theme_url }}/scripts/highlight.min.js"></script> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+<script src="{{ theme_url }}/scripts/mousetrap.min.js"></script>
+<script src="{{ theme_url }}/scripts/clipboard.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+
+  document.querySelectorAll('.menuitem a').forEach(function(el) {
+    if (el.getAttribute('data-shortcut').length > 0) {
+      Mousetrap.bind(el.getAttribute('data-shortcut'), function() {
+        location.assign(el.getAttribute('href'));
+      });
+    }
+  });
+
+  /**
+   * Generate page table of contents
+   * Get all H2 elements and render them in a list
+   **/
+  function generatePageTOC() {
+    var tocContainer = document.getElementById('page-toc-container');
+
+    document.querySelectorAll('.article h2').forEach(function(el, index) {
+      // Insert a marker since anchor links breaks with css position sticky
+      // sticky headers upwards are stacked at the top of the viewport
+      // and therefore cannot be jumped to since they are already visible
+      // Instead inject a hidden element to use as a scroll marker
+      el.insertAdjacentHTML('beforebegin', '<i id="page-toc-'+index+'" class="page-toc-scroll-marker fas fa-anchor fa-lg"></i>');
+
+      var newTocNavItem = document.createElement('li');
+      var newTocNavItemLink = document.createElement('a');
+      var newTocNavItemText = document.createTextNode(el.textContent);
+
+      //newTocNavItemLink.classList.add('fas fa-anchor fa-lg');
+      newTocNavItemLink.setAttribute('href', '#page-toc-' + index);
+      newTocNavItemLink.appendChild(newTocNavItemText);
+      newTocNavItem.appendChild(newTocNavItemLink);
+      tocContainer.appendChild(newTocNavItem);
+    });
+  }
+  generatePageTOC();
+
+  /**
+   * Copy to clipboard
+   * Powered by https://clipboardjs.com
+   **/
+  new ClipboardJS('.copy-to-clipboard-btn');
+
+  // Attach id attribute to all pre > code elements and append a button
+  document.querySelectorAll('pre code').forEach(function(el, index) {
+    el.setAttribute('id', 'code-block-' + index);
+  });
+
+  // Add copy-to-clipboard buttons. Begin by wrapping all pre elements in a div...
+  document.querySelectorAll('pre').forEach(function(el, index) {
+
+    // Create the wrapper div and apply classes on it
+    var wrapper = document.createElement('div');
+    wrapper.classList.add('code-block-container');
+
+    // Place the wrapper div before the pre element
+    el.parentNode.insertBefore(wrapper, el);
+
+    // Move the pre element inside the wrapper div
+    wrapper.appendChild(el);
+
+    // Append a copy to clipboard button after each code block
+    wrapper.insertAdjacentHTML('beforeend', `<button type="button" class="copy-to-clipboard-btn" data-clipboard-target="#code-block-${index}"><i class="fas fa-clipboard fa-lg"></i></button>`);
+  });
+</script>
+>>>>>>> 572239e3dae5ee70b114fabc47a500edb17a8369

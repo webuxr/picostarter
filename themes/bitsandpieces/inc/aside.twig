@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <aside class="main-nav">
   <nav>
     <!--
@@ -42,3 +43,49 @@
   {% include "{{ theme_url }}/inc/debug.twig" %}
   {% endif %}
 </aside>
+=======
+<aside class="main-nav">
+  <nav>
+    <!--
+      root node `/`
+      ├── inner node `code`
+      │   ├── inner node `html`
+      │   │   ├── leaf node `attributes`
+      │   │   ├── leaf node `elements`
+      │   │   └── leaf node `pseudo-elements`
+      │   └── leaf node `css`
+      └── leaf node `contact`
+    -->
+    {% macro tree(parent) %}
+      {% import _self as utils %}
+      {% for child in parent.children %}
+        {% if child.page %}
+          <li class="inner-node">
+            <a href="{{ child.page.url }}" class="leaf-node{% if child.page.id == current_page.id %} active{% endif %}">{{ child.page.title }}</a>
+          </li>
+        {% endif %}
+        {% if child.children %}
+          <li class="inner-node children">
+            <ul class="group">
+              {{ utils.tree(child) }}
+            </ul>
+          </li>
+        {% endif %}
+      {% endfor %}
+    {% endmacro %}
+
+    <ul class="menu">
+      <li class="menu-header">
+        <a href="{{ pages["index"].url }}" class="logotype">{{ pages["index"].title }}</a>
+      </li>
+
+      {% import _self as utils %}
+      {{ utils.tree(pages["index"].tree_node) }}
+    </ul>
+  </nav>
+
+  {% if config.twig_config.debug %}
+  {% include "{{ theme_url }}/inc/debug.twig" %}
+  {% endif %}
+</aside>
+>>>>>>> 572239e3dae5ee70b114fabc47a500edb17a8369

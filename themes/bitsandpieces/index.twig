@@ -12,17 +12,20 @@
 
   <title>{{ site_title }}{% if meta.title %} | {{ meta.title }}{% endif %}</title>
 
-  <link rel="stylesheet" href="{{ theme_dir }}/styles/highlightjs-github.min.css" type="text/css">
-  <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css"> -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i">
-  <!-- <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-  <!-- <link rel="stylesheet" href="{!{ theme_dir }}/styles/fontawesome-v572-all.css"> -->
-
+  <link rel="stylesheet" href="{{ theme_url }}/styles/highlightjs-github.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i">
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+  <!-- <link rel="stylesheet" href="{!{ theme_url }}/styles/fontawesome-v572-all.css"> -->
   <link rel="stylesheet" href="{{ theme_dir }}/styles/main.css" type="text/css">
   <link rel="stylesheet" href="{{ theme_dir }}/styles/nav.css" type="text/css">
+
+  <link rel="stylesheet" href="{{ theme_url }}/styles/main.css">
+  <link rel="stylesheet" href="{{ theme_url }}/styles/nav.css">
+
   {% for css_file in config.external_css %}
-    <link rel="stylesheet" href="{{ css_file }}" type="text/css">
+    <link rel="stylesheet" href="{{ css_file }}">
   {% endfor %}
 
   <!-- <style>
@@ -36,14 +39,14 @@
     */
 
     /*
-    <!- - <ul class="fa-ul">
+    <ul class="fa-ul">
       <li><span class="fa-li" ><i class="fas fa-folder fa-xs" aria-hidden="true"></i></span>List item text</li>
       <li><span class="fa-li" ><i class="fas fa-folder-open fa-xs" aria-hidden="true"></i></span>List item text</li>
       <li><span class="fa-li" ><i class="fas fa-plus-square fa-xs" aria-hidden="true"></i></span>List item text</li>
       <li><span class="fa-li" ><i class="fas fa-minus-square fa-xs" aria-hidden="true"></i></span>List item text</li>
       <li><span class="fa-li" ><i class="fas fa-file fa-xs" aria-hidden="true"></i></span>List item text</li>
       <li><span class="fa-li" ><i class="fas fa-square fa-xs" aria-hidden="true"></i></span>List item text</li>
-    </ul> - ->
+    </ul>
     */
   </style> -->
 </head>
@@ -119,8 +122,10 @@
   </nav>
 
   <!-- {!% include "{!{ theme_url }}/inc/scripts.twig" %} -->
-  <!-- <script src="{!{ theme_url }}/scripts/highlight.min.js"></script> -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+
+  <script src="{{ theme_url }}/scripts/highlight.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script> -->
+
   <script src="{{ theme_url }}/scripts/mousetrap.min.js"></script>
   <script src="{{ theme_url }}/scripts/clipboard.min.js"></script>
   <script>

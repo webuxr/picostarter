@@ -19,21 +19,21 @@ This is what the underlying file system structure of this site looks like:
 -   index.md
 -   404.md
 -   about/
-   -   index.md
+    -   index.md
 -   code/
-   -   index.md
-   -   css/
-       -   index.md
-   -   html/
-       -   index.md
-       -   attributes.md
-       -   elements.md
-   -   javascript/
-       -   index.md
-   -   mathjax/
-       -   index.md
-   -   scss/
-       -   index.md
+    -   index.md
+    -   css/
+        -   index.md
+    -   html/
+        -   index.md
+        -   attributes.md
+        -   elements.md
+    -   javascript/
+        -   index.md
+    -   mathjax/
+        -   index.md
+    -   scss/
+        -   index.md
 -   process/
     -   index.md
     -   marketing/

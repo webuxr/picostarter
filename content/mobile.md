@@ -2,7 +2,7 @@
 title: Mobile
 description: A virtual place for our physical home
 author: Ryan R. Smith
-date: 2019-03-02 @ 06:14:00
+date: 2019-03-02 06:14:00
 time: 06:14:00
 robots: noindex,nofollow
 template: mobile

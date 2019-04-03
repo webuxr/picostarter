@@ -4,7 +4,7 @@ description: A page chock-full of helpful PicoCMS doc links.
 author: Ryan R. Smith
 date: 2019-03-02 20:39:00
 time: 20:39:00
-robots: noindex,nofollow
+robots: noindex, nofollow
 template: index
 #gzip: true
 links:
@@ -31,3 +31,4 @@ Attempting to iterate through some frontmatter YAML here.
 
 -   Link 1: %meta.links.url%
 -   Link 2: %meta.links.[1].url%
+-   Link 3: %meta.links%
